@@ -1,0 +1,32 @@
+
+.btn {
+  &.icon-left {
+    position: relative;
+    padding-left: $btn-padding-x + 2.8rem;
+
+    & > .fas, & > .far, & > .fab {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(100% + 2px);
+      width: 3rem;
+      top: -1px;
+      left: -1px;
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      background-color: transparentize(#000, 0.8);
+    }
+  }
+
+  &-sm {
+    &.icon-left {
+      padding-left: $btn-padding-x-sm + 1.8rem;
+
+      & > .fas, & > .far, & > .fab {
+        width: 2rem;
+      }
+    }
+  }
+
+}

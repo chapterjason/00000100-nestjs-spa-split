@@ -1,0 +1,27 @@
+{
+  "name": "@00000100-nestjs-spa-split/frontend",
+  "private": true,
+  "scripts": {
+    "lint": "eslint ./src/**/*",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/node": "^13.13.4",
+    "@mscs/environment": "^0.1.0",
+    "@nestjs/common": "^7.0.9",
+    "@nestjs/core": "^7.0.9",
+    "@nestjs/platform-express": "^7.0.9",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.5",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3",
+    "twig": "^1.15.1"
+  },
+  "devDependencies": {
+    "@mscs/eslint-config": "^0.1.2",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "nodemon": "^2.0.3"
+  }
+}
