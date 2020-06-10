@@ -5,6 +5,9 @@ WORKDIR /app
 
 COPY tsconfig.json ./
 COPY .env ./
+COPY healthcheck.js ./
+
+HEALTHCHECK --interval=12s --timeout=12s --start-period=30s CMD node /app/healthcheck.js
 
 # ---- dependencies ----
 FROM base as dependencies

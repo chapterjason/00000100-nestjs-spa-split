@@ -1,11 +1,16 @@
 # ---- base ----
 FROM node:12-alpine AS base
 
+ARG APP_PORT
+
 WORKDIR /app
 
 COPY tsconfig.json ./
 COPY ormconfig.js ./
 COPY .env ./
+COPY healthcheck.js ./
+
+HEALTHCHECK --interval=12s --timeout=12s --start-period=30s CMD node /app/healthcheck.js
 
 # ---- dependencies ----
 FROM base as dependencies
