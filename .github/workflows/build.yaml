@@ -1,0 +1,61 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+      - release/*
+  pull_request:
+    branches:
+      - master
+      - release/*
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ubuntu-18.04-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ubuntu-18.04-yarn-
+
+      - run: yarn
+        working-directory: ./packages/api
+
+      - run: yarn
+        working-directory: ./packages/frontend
+
+      - run: yarn
+        working-directory: ./packages/ui
+
+      - run: yarn run lint
+        working-directory: ./packages/api
+
+      - run: yarn run lint
+        working-directory: ./packages/frontend
+
+      - run: yarn run lint
+        working-directory: ./packages/ui
+
+      - run: yarn run build
+        working-directory: ./packages/api
+
+      - run: yarn run build
+        working-directory: ./packages/frontend
+
+      - run: yarn run build
+        working-directory: ./packages/ui
