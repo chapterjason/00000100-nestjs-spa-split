@@ -1,15 +1,15 @@
-import { HashRouter, Route, Switch } from "react-router-dom";
-import { Home } from "../Pages/Home";
-import { ListCats } from "../Pages/Cats/ListCats";
 import * as React from "react";
-import { ApplicationContextProvider } from "../Contexts/ApplicationContextProvider";
-import { Client } from "../Services/Client";
-import { ApplicationContextProps } from "../Contexts/ApplicationContextProps";
-import { ApplicationProps } from "./ApplicationProps";
-import { CreateCat } from "../Pages/Cats/CreateCat";
 import { Col, Container, Row } from "react-bootstrap";
-import { Navigation } from "./Navigation";
+import { HashRouter, Route, Switch } from "react-router-dom";
+import { ApplicationContextProps } from "../Contexts/ApplicationContextProps";
+import { ApplicationContextProvider } from "../Contexts/ApplicationContextProvider";
+import { CreateCat } from "../Pages/Cats/CreateCat";
 import { EditCat } from "../Pages/Cats/EditCat";
+import { ListCats } from "../Pages/Cats/ListCats";
+import { Home } from "../Pages/Home";
+import { Client } from "../Services/Client";
+import { ApplicationProps } from "./ApplicationProps";
+import { Navigation } from "./Navigation";
 
 export function Application(props: ApplicationProps) {
     const { base } = props;
@@ -41,8 +41,7 @@ export function Application(props: ApplicationProps) {
                                 NestJS Single Page Application
                             </strong>{" "}
                             Created with <span className="fa fa-heart text-danger"/> by{" "}
-                            <a href="https://github.com/chapterjason" rel="noopener noreferrer"
-                               target="_blank">
+                            <a href="https://github.com/chapterjason" rel="noopener noreferrer" target="_blank">
                                 chapterjason
                             </a>
                         </Col>

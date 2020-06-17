@@ -1,11 +1,11 @@
 import * as React from "react";
-import { useList, useMount } from "react-use";
+import { Alert, Button, ButtonGroup, Table } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
-import { ApplicationContext } from "../../Contexts/ApplicationContext";
-import { Cat } from "../../Datas/Cat";
+import { useList, useMount } from "react-use";
 import { Header } from "../../Components/Header";
 import { Loading } from "../../Components/Loading";
-import { Alert, Button, ButtonGroup, Table } from "react-bootstrap";
+import { ApplicationContext } from "../../Contexts/ApplicationContext";
+import { Cat } from "../../Datas/Cat";
 
 export function ListCats() {
     const history = useHistory();
@@ -18,7 +18,7 @@ export function ListCats() {
             const response = await client.get<Cat[]>("/api/cats");
             setCats(response.data);
         } catch (error) {
-
+            console.log(error);
         }
     }
 
@@ -86,7 +86,7 @@ export function ListCats() {
                             <tr>
                                 <td colSpan={2} className="text-center">
                                     <Alert variant="info">
-                                        No cats found! Why don't you <Link to="/cats/create">create</Link> one?
+                                        No cats found! Why don&apos;t you <Link to="/cats/create">create</Link> one?
                                     </Alert>
                                 </td>
                             </tr>

@@ -1,11 +1,11 @@
-import { ApplicationContext } from "../../Contexts/ApplicationContext";
 import * as React from "react";
-import { Cat } from "../../Datas/Cat";
-import { Client } from "../../Services/Client";
-import { ValidationError } from "../../Datas/ValidationError";
+import { Alert, Button, Col, Form, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Header } from "../../Components/Header";
-import { Alert, Button, Col, Form, Row } from "react-bootstrap";
+import { ApplicationContext } from "../../Contexts/ApplicationContext";
+import { Cat } from "../../Datas/Cat";
+import { ValidationError } from "../../Datas/ValidationError";
+import { Client } from "../../Services/Client";
 
 export function CreateCat() {
     const { client } = React.useContext(ApplicationContext);

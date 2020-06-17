@@ -1,4 +1,4 @@
-name: Build
+name: Lint
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
       - release/*
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -42,11 +42,11 @@ jobs:
       - run: yarn
         working-directory: ./packages/ui
 
-      - run: yarn run build
+      - run: yarn run lint
         working-directory: ./packages/api
 
-      - run: yarn run build
+      - run: yarn run lint
         working-directory: ./packages/frontend
 
-      - run: yarn run build
+      - run: yarn run lint
         working-directory: ./packages/ui

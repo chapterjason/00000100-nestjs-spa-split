@@ -57,15 +57,13 @@ export function EditCat() {
                 history.push("/cats");
             } catch (error) {
                 if (Client.isRequestError<ResponseError>(error)) {
-                    const message = error.response.data.message;
+                    const { message } = error.response.data;
                     if (Array.isArray(message)) {
                         setError(message.join("\n"));
                     } else {
                         setError(message);
                     }
-                    if (400 === error.response.status) {
-                        setLoading(false);
-                    }
+                    setLoading(false);
                 } else {
                     setError(error.message);
                 }

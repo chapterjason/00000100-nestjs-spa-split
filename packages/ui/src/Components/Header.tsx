@@ -1,6 +1,6 @@
-import { HeaderProps } from "./HeaderProps";
 import * as React from "react";
 import { Col, Row } from "react-bootstrap";
+import { HeaderProps } from "./HeaderProps";
 
 export function Header(props: HeaderProps) {
     const { children, title } = props;
