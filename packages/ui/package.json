@@ -23,7 +23,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-simple-import-sort": "^5.0.3",
     "jquery": "^3.5.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
